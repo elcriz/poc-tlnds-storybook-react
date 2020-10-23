@@ -4,7 +4,7 @@ This project is a POC and was bootstrapped with [Create React App](https://githu
 
 The components provided are React components, based on the (Angular) code for the Learnspace "landing page" concept. They are by no means finished!
 
-## Available Scripts
+## Available Storybook scripts
 
 In the project directory, you can run:
 
@@ -12,6 +12,12 @@ In the project directory, you can run:
 
 Runs the Storybook implementation in development mode.<br />
 Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
+
+### `yarn build-storybook`
+
+Builds the Storybook app for production.
+
+## Available create-react-app scripts
 
 ### `yarn start`
 
