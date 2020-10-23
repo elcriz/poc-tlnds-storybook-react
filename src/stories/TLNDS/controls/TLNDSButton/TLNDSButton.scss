@@ -1,0 +1,72 @@
+@import '../../scss/main';
+
+$tlnds-button-background-color: $color-ui-100 !default;
+$tlnds-button-color: $color-text !default;
+$tlnds-button-font-family: $font-family-sans-serif !default;
+$tlnds-button-font-size: $font-size-80 !default;
+$tlnds-button-font-weight: $font-weight-200 !default;
+$tlnds-button-line-height: $line-height-100 !default;
+$tlnds-button-border: 1px solid $tlnds-button-color !default;
+
+$tlnds-button-primary-background-color: $color-primary !default;
+$tlnds-button-primary-color: $color-text-light !default;
+
+$tlnds-button-secondary-background-color: $color-secondary !default;
+$tlnds-button-secondary-color: $color-text-light !default;
+
+$tlnds-button-tertiary-background-color: $color-tertiary !default;
+$tlnds-button-tertiary-color: $color-text-light !default;
+
+.tlnds-button {
+    position: relative;
+    display: inline-block;
+    padding: $spacing / 2 $spacing * 1.5;
+    appearance: none;
+    background-color: $tlnds-button-background-color;
+    color: $tlnds-button-color;
+    font-family: $tlnds-button-font-family;
+    font-size: $tlnds-button-font-size;
+    font-weight: $tlnds-button-font-weight;
+    line-height: $tlnds-button-line-height;
+    border: none;
+    border-radius: $border-radius-100;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.tlnds-button--primary {
+    background-color: $tlnds-button-primary-background-color;
+    color: $tlnds-button-primary-color;
+}
+
+.tlnds-button--secondary {
+    background-color: $tlnds-button-secondary-background-color;
+    color: $tlnds-button-secondary-color;
+}
+
+.tlnds-button--tertiary {
+    background-color: $tlnds-button-tertiary-background-color;
+    color: $tlnds-button-tertiary-color;
+}
+
+.tlnds-button--outlined {
+    background: none;
+    border: $tlnds-button-border;
+
+
+    &.tlnds-button--primary {
+        color: $tlnds-button-primary-background-color;
+        border-color: $tlnds-button-primary-background-color;
+    }
+
+    &.tlnds-button--secondary {
+        color: $tlnds-button-secondary-background-color;
+        border-color: $tlnds-button-secondary-color;
+    }
+
+    &.tlnds-button--tertiary {
+        color: $tlnds-button-tertiary-background-color;
+        border-color: $tlnds-button-tertiary-background-color;
+    }
+}

@@ -1,0 +1,61 @@
+@import '../../scss/main';
+
+$tlnds-app-card-inner-background-color: $color-ui-light !default;
+$tlnds-app-card-inner-border: 1px solid $color-ui-100 !default;
+$tlnds-app-card-information-font-size: $font-size-70 !default;
+$tlnds-app-card-information-color: $color-text-grey !default;
+$tlnds-app-card-icon-container-background-color: $color-ui-200 !default;
+
+.tlnds-app-card__inner {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $tlnds-app-card-inner-background-color;
+    border: $tlnds-app-card-inner-border;
+    border-radius: $border-radius-80;
+    overflow: hidden;
+
+    &:hover,
+    &:focus {
+        box-shadow: $box-shadow-100;
+    }
+}
+
+.tlnds-app-card__heading {
+    margin-bottom: $spacing / 2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tlnds-app-card__description {
+    order: 2;
+    padding: $spacing * 2 $spacing * 2 $spacing * 4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tlnds-app-card__information {
+    color: $tlnds-app-card-information-color;
+    font-size: $tlnds-app-card-information-font-size;
+}
+
+.tlnds-app-card__icon-container {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    padding: $spacing * 2;
+    width: 100%;
+    background-color: $tlnds-app-card-icon-container-background-color;
+}
+
+.tlnds-app-card__icon {
+    display: block;
+    max-width: $spacing * 16;
+    border-radius: $border-radius-90;
+}
+
+.tlnds-app-card__rating {
+    margin-top: $spacing;
+}
