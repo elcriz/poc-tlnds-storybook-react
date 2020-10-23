@@ -1,8 +1,17 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a POC and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and Storybook. It shows how Storybook could work for TLN, when implemented in React.
+
+### Disclaimer
+
+The components provided are React components, based on the (Angular) code for the Learnspace "landing page" concept. They are by no means finished!
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `yarn storybook`
+
+Runs the Storybook implementation in development mode.<br />
+Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
 
 ### `yarn start`
 
