@@ -5,7 +5,7 @@ import TLNDSCollectionItem from './TLNDSCollectionItem';
 import './TLNDSCollection.scss';
 
 /**
- * Render a grouped collection of related components and/or elemenents.
+ * `TLNDSCollection` is a component for rendering a grouped collection of related components and/or elements.
  */
 export const TLNDSCollection = ({
     variant,

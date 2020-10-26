@@ -1,4 +1,4 @@
-@import '../../scss/main';
+@import '../../../../scss/main.scss';
 
 $tlnds-button-background-color: $color-ui-100 !default;
 $tlnds-button-color: $color-text !default;
@@ -33,6 +33,11 @@ $tlnds-button-tertiary-color: $color-text-light !default;
     box-sizing: border-box;
     overflow: hidden;
     cursor: pointer;
+
+    &[disabled] {
+        opacity: .5;
+        pointer-events: none;
+    }
 }
 
 .tlnds-button--primary {
@@ -62,7 +67,7 @@ $tlnds-button-tertiary-color: $color-text-light !default;
 
     &.tlnds-button--secondary {
         color: $tlnds-button-secondary-background-color;
-        border-color: $tlnds-button-secondary-color;
+        border-color: $tlnds-button-secondary-background-color;
     }
 
     &.tlnds-button--tertiary {

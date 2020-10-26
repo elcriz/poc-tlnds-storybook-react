@@ -9,6 +9,7 @@ import './TLNDSButton.scss';
 export const TLNDSButton = ({
     label,
     variant,
+    isDisabled,
     isOutlined,
     onClick,
 }) => (
@@ -20,6 +21,7 @@ export const TLNDSButton = ({
             'tlnds-button--outlined': isOutlined,
         })}
         type="button"
+        disabled={isDisabled}
         onClick={onClick}
     >
         {label}
@@ -40,6 +42,10 @@ TLNDSButton.propTypes = {
         'tertiary',
     ]),
     /**
+     * Is this button disabled?
+     */
+    isDisabled: PropTypes.bool,
+    /**
      * Is this button styled as outlined?
      */
     isOutlined: PropTypes.bool,
@@ -50,7 +56,7 @@ TLNDSButton.propTypes = {
 };
 
 TLNDSButton.defaultProps = {
-    variant: 'primary',
+    isDisabled: false,
     isOutlined: false,
     onClick: undefined,
 };

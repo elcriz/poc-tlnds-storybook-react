@@ -1,10 +1,9 @@
 import React from 'react';
 import { TLNDSCollection as Collection } from './TLNDSCollection';
-import TLNDSCollectionItem from './TLNDSCollectionItem';
 import TLNDSAppCard from '../../components/TLNDSAppCard/TLNDSAppCard';
 
 export default {
-    title: 'Layout/Collection',
+    title: 'Library/Layout/Collection',
     component: Collection,
     argTypes: {
         children: {

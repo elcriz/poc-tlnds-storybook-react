@@ -2,7 +2,7 @@ import React from 'react';
 import { TLNDSRating as Rating } from './TLNDSRating';
 
 export default {
-    title: 'Components/Rating',
+    title: 'Library/Components/Rating',
     component: Rating,
     argTypes: {
         value: {

@@ -2,7 +2,7 @@ import React from 'react';
 import { TLNDSAppCard as AppCard } from './TLNDSAppCard';
 
 export default {
-    title: 'Components/AppCard',
+    title: 'Library/Components/AppCard',
     component: AppCard,
     argTypes: {
         ratingValue: {

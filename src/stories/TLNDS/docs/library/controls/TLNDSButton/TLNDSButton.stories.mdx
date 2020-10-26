@@ -1,0 +1,122 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
+import dedent from 'ts-dedent';
+import { TLNDSButton } from './TLNDSButton';
+
+<Meta title="Library/Controls/Button" component={TLNDSButton} />
+
+# Button
+
+Buttons allow users to take actions and make choices, with  a single click or tap.
+
+`TLNDSButton` is the primary button component.
+
+<Canvas>
+    <Story name="All buttons" primary>
+        <TLNDSButton label="Default" />
+        <TLNDSButton label="Primary" variant="primary" />
+        <TLNDSButton label="Secondary" variant="secondary" />
+        <TLNDSButton label="Default outlined" isOutlined />
+        <TLNDSButton label="Primary outlined" variant="primary" isOutlined />
+        <TLNDSButton label="Secondary outlined" variant="secondary" isOutlined />
+    </Story>
+</Canvas>
+
+<Props of={TLNDSButton} />
+
+## When to use this component
+
+Use the `TLNDSButton` component to help users carry out an action, like confirming their purchase or saving their information.
+
+## When to not use this component
+
+Do not use this component to help navigate users to other pages or screens (e.g. 'Contact support' or 'Go back'). Use `TLNDSLink` components for that purpose instead.
+
+## How it works
+
+Write your `TLNDSButton` label text to describe the action the user or the system will carry out upon clicking or tapping it. For example:
+
+- 'Log in' to an account the user has already created
+- 'Add to my LML' to add a lesson material to the user's LML
+- 'Confirm and send' on a page or screen that does not have any legal content the user must agree to
+- 'Accept and send' on a page that has legal content the user must agree to
+- 'Log out' or 'Sign out' when the user is signed in to their account
+
+You may need to include more or different words to better describe the action. For example, 'Add another addess'.
+
+Always align the primary action to the left edge of your form.
+
+## Primary buttons
+
+Primary buttons are used for default actions on a page or a screen. Avoid using multiple primary buttons on a single page or screen. Having more than one main call to an action reduces their impact, and makes it harder for the user to know what to do next.
+
+<Canvas>
+    <Story
+        name="Primary"
+        args={{
+            label: 'Primary',
+            variant: 'primary'
+        }}
+    >
+        {(args) => (
+            <TLNDSButton {...args} />
+        )}
+    </Story>
+</Canvas>
+
+## Secondary buttons
+
+Secondary buttons are used for secondary actions on a page or a screen.
+Primary buttons are used for default actions on a page or a screen. Avoid using multiple primary buttons on a single page or screen. Having more than one main call to an action reduces their impact, and makes it harder for the user to know what to do next.
+
+<Canvas>
+    <Story
+        name="Secondary"
+        args={{
+            label: 'Secondary',
+            variant: 'secondary'
+        }}
+    >
+        {(args) => (
+            <TLNDSButton {...args} />
+        )}
+    </Story>
+</Canvas>
+
+## Outlined buttons
+
+Use outlined buttons when they are to have less emphasis than a contained button and/or are be rendered on a darker background.
+
+<Canvas>
+    <Story
+        name="Outlined"
+        args={{
+            label: 'Outlined primary',
+            variant: 'primary',
+            isOutlined: true,
+        }}
+    >
+        {(args) => (
+            <TLNDSButton {...args} />
+        )}
+    </Story>
+</Canvas>
+
+## Disabled buttons
+
+Use disabled buttons when they are not yet ready to be clicked or tapped on, but you want to help the user by already showing the possible action when a task is yet to be completed (e.g. when something is loading or not all mandatory fields in a form are filled out).
+
+<Canvas>
+    <Story
+        name="Disabled"
+        args={{
+            label: 'Disabled primary',
+            variant: 'primary',
+            isDisabled: true,
+        }}
+    >
+        {(args) => (
+            <TLNDSButton {...args} />
+        )}
+    </Story>
+</Canvas>
+
