@@ -1,8 +1,28 @@
-This project is a POC and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and Storybook. It shows how Storybook could work for TLN, when implemented in React.
+# The Learning Network Design System (React Storybook POC)
 
-### Disclaimer
+Use this (experimental) design system to make your service or product consistent with The Learning Network (TLN) guidelines for styling and UI patterns. The goal is to make buidling durable UIs that meet TLN specs more productive and satisfying.
 
-The components provided are React components, based on the (Angular) code for the Learnspace "landing page" concept. They are by no means finished!
+## Table of Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- (@see https://github.com/thlorenz/doctoc) -->
+
+- [Disclaimer](#disclaimer)
+- [Available Storybook scripts](#available-storybook-scripts)
+  - [`yarn storybook`](#yarn-storybook)
+  - [`yarn build-storybook`](#yarn-build-storybook)
+- [Available create-react-app scripts](#available-create-react-app-scripts)
+  - [`yarn start`](#yarn-start)
+  - [`yarn test`](#yarn-test)
+  - [`yarn build`](#yarn-build)
+  - [`yarn eject`](#yarn-eject)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Disclaimer
+
+This project is a POC and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and Storybook. It shows how Storybook could work for TLN, when implemented in React. The components provided are React components, based on the (Angular) code for the Learnspace "landing page" concept. They are by no means finished!
 
 ## Available Storybook scripts
 
@@ -11,21 +31,17 @@ In the project directory, you can run:
 ### `yarn storybook`
 
 Runs the Storybook implementation in development mode.<br />
-Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
+Open [http://localhost:6006/?path=/docs/introduction--page](http://localhost:6006/?path=/docs/introduction--page) to view it in the browser. This url will take you to the introduction page.
 
 ### `yarn build-storybook`
 
 Builds the Storybook app for production.
 
+### `doctoc`
+
+Generates and updates the automatically generated tables of contents in Markdown and `MDX` files. You might need to specify a file path. See [DocToc documentation](https://github.com/thlorenz/doctoc) for details.
+
 ## Available create-react-app scripts
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
 ### `yarn test`
 

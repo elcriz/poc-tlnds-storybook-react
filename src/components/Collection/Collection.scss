@@ -1,0 +1,55 @@
+@import '../../scss/main.scss';
+
+.collection {
+    display: flex;
+    flex-wrap: wrap;
+    margin: $spacing * -2;
+}
+
+.collection__item {
+    .collection--one-fourth > & {
+        @include media(0, $range-hand-m) {
+            margin: $spacing $spacing * 2;
+            width: calc(100% - #{$spacing * 4});
+        }
+
+        @include media($range-hand-l, $range-lap-m) {
+            margin: $spacing * 2;
+            width: calc(50% - #{$spacing * 4});
+        }
+
+        @include media($range-lap-l, false) {
+            margin: $spacing * 2;
+            width: calc(25% - #{$spacing * 4});
+        }
+    }
+
+    .collection--one-third > & {
+        @include media(0, $range-hand-s) {
+            margin: $spacing $spacing * 2;
+            width: calc(100% - #{$spacing * 4});
+        }
+
+        @include media($range-hand-m, $range-lap-m) {
+            margin: $spacing $spacing * 2;
+            width: calc(50% - #{$spacing * 4});
+        }
+
+        @include media($range-lap-l, false) {
+            margin: $spacing * 2;
+            width: calc(33.33% - #{$spacing * 4});
+        }
+    }
+
+    .collection--one-half > & {
+        @include media(0, $range-hand-s) {
+            margin: $spacing $spacing * 2;
+            width: calc(100% - #{$spacing * 4});
+        }
+
+        @include media($range-hand-m, false) {
+            margin: $spacing * 2;
+            width: calc(50% - #{$spacing * 4});
+        }
+    }
+}

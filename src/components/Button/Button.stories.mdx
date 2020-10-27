@@ -1,0 +1,250 @@
+import {
+    Meta,
+    Story,
+    Props,
+    Canvas
+} from '@storybook/addon-docs/blocks';
+import { Button } from './Button';
+
+<Meta
+    title="Library/Controls/Button"
+    component={Button}
+/>
+
+# Button
+
+## Table of Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- (@see https://github.com/thlorenz/doctoc) -->
+
+- [Overview](#overview)
+  - [When to use this component](#when-to-use-this-component)
+  - [When not to use this component](#when-not-to-use-this-component)
+  - [Button types](#button-types)
+- [Component API](#component-api)
+  - [ID](#id)
+  - [ClassName](#classname)
+  - [Tabindex](#tabindex)
+  - [Type](#type)
+- [Button variants](#button-variants)
+  - [Primary buttons](#primary-buttons)
+  - [Secondary buttons](#secondary-buttons)
+  - [Tertiary buttons](#tertiary-buttons)
+  - [Outlined buttons](#outlined-buttons)
+  - [Disabled buttons](#disabled-buttons)
+  - [Loading buttons](#loading-buttons)
+  - [Skeleton buttons](#skeleton-buttons)
+- [References](#references)
+  - [Accessibility](#accessibility)
+- [Feedback?](#feedback)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Overview
+
+Buttons allow the user to take action or make a choice with a single click or tab. Button labels describe the action that will be executed when the user interacts with it.
+
+### When to use this component
+
+Use the `Button` component to help the user carry out an action. In most cases, this action will take place on the same page or screen.
+
+### When not to use this component
+
+Do not use the `Button` component to help navigate the user to another page or screen. Use the `Link` component instead.
+
+### Button types
+
+<Canvas>
+    <Story name="All buttons">
+        <Button>Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="tertiary">Tertiary</Button>
+        <Button isOutlined>Outlined</Button>
+        <Button isDisabled>Disabled</Button>
+        <Button isLoading>Loading</Button>
+        <Button isSkeleton>Skeleton</Button>
+    </Story>
+</Canvas>
+
+## Component API
+
+<Props />
+
+### ID
+
+You can optionally set the button's ID by providing the optional `id` prop.
+
+```jsx
+<Button id="myButton">
+    Button with custom ID
+</Button>
+```
+
+### ClassName
+
+You can optionally set a custom (CSS) classname for the button by providing the optional `className` prop.
+
+```jsx
+<Button className="my-button">
+    Button with custom classname
+</Button>
+```
+
+### Tabindex
+
+You can optionally set the button's tabindex by providing the optional `tabIndex` prop.
+
+<Button tabIndex={1}>
+    Button with custom tabindex
+</Button>
+
+```jsx
+<Button tabIndex={1}>
+    Button with custom tabindex
+</Button>
+```
+
+### Type
+
+You can optionally set the button's type by providing the optional `type` prop.
+
+```jsx
+<Button type="submit">
+    Button with custom type
+</Button>
+```
+
+## Button variants
+
+Buttons come in various flavours, depending on which action inside which context they represent.
+
+### Primary buttons
+
+Primary buttons are for the principal call to action on a page or screen. Primary buttons should only appear once per screen (not including the application header or in a modal dialog).
+
+<Canvas>
+    <Story
+        name="Primary"
+        args={{
+            label: 'Primary',
+        }}
+    >
+        {(args) => (
+            <Button {...args}>Primary</Button>
+        )}
+    </Story>
+</Canvas>
+
+### Secondary buttons
+
+Secondary buttons are for secondary actions on each page or screen. They can only be used in conjunction with a primary button.
+
+<Canvas>
+    <Story
+        name="Secondary"
+        args={{
+            variant: 'secondary',
+        }}
+    >
+        {(args) => (
+            <Button {...args}>Secondary</Button>
+        )}
+    </Story>
+</Canvas>
+
+### Tertiary buttons
+
+Tertiary buttons are meant for less prominent actions. They can be used in isolation or paired with a primary button when there are multiple calls to action.
+
+<Canvas>
+    <Story
+        name="Tertiary"
+        args={{
+            variant: 'tertiary',
+        }}
+    >
+        {(args) => (
+            <Button {...args}>Tertiary</Button>
+        )}
+    </Story>
+</Canvas>
+
+### Outlined buttons
+
+Outlined buttons are for the least pronounced actions. Since they can also be styled as primary, secondary or tertiary buttons (but outlined without a backgorund colour), they can fit the same purpose on darker backgrounds (e.g. a background image).
+
+<Canvas>
+    <Story
+        name="Outlined"
+        args={{
+            isOutlined: true,
+        }}
+    >
+        {(args) => (
+            <Button {...args}>Outlined</Button>
+        )}
+    </Story>
+</Canvas>
+
+### Disabled buttons
+
+Disabled buttons are used for actions that are not (yet) available to the user, but being told of in advance (e.g. not all mandatory fields in a form are filled out). They can not be clicked or tapped.
+
+<Canvas>
+    <Story
+        name="Disabled"
+        args={{
+            isDisabled: true,
+        }}
+    >
+        {(args) => (
+            <Button {...args}>Disabled</Button>
+        )}
+    </Story>
+</Canvas>
+
+### Loading buttons
+
+Loading buttons are used to render a 'loading' variant of a button. They can be used to indicate to the user that the action that was triggered when they interacted with the button is still happening, and not yet finished. They provide feedback that the user triggered the action correctly.
+
+<Canvas>
+    <Story
+        name="Loading"
+        args={{
+            isLoading: true,
+        }}
+    >
+        {(args) => (
+            <Button {...args}>Loading</Button>
+        )}
+    </Story>
+</Canvas>
+
+### Skeleton buttons
+
+Skeleton buttons are used to render a 'skeleton' variant of a button. this is useful to display initial page or screen load to indicate to users that content is being loaded. They behave the same as disabled buttons: they cannot be clicked or tapped. They do not contain a visible label and render in the generic UI colours.
+
+<Canvas>
+    <Story
+        name="Skeleton"
+        args={{
+            label: 'Loading',
+            isSkeleton: true,
+        }}
+    >
+        {(args) => (
+            <Button {...args}>Skeleton</Button>
+        )}
+    </Story>
+</Canvas>
+
+## References
+
+### Accessibility
+- [MDN: Tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
+
+## Feedback?
+
+Feel free to help us improve this component and/or its documentation by providing feedback, asking questions or updating the files involved through a pull request. [Learn more about contributing to our design system](?path=/docs/how-to-contribute--page).

@@ -1,0 +1,172 @@
+import {
+    Meta,
+    Story,
+    Props,
+    Canvas
+} from '@storybook/addon-docs/blocks';
+import { AppCard } from './AppCard';
+import { Collection } from '../Collection/Collection';
+import exampleImageFile from '../../assets/app-example-01.png';
+
+<Meta
+    title="Library/Components/AppCard"
+    component={AppCard}
+/>
+
+# AppCard
+
+## Table of contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- (@see https://github.com/thlorenz/doctoc) -->
+
+- [Overview](#overview)
+  - [When to use this component](#when-to-use-this-component)
+  - [When to not use this component](#when-to-not-use-this-component)
+- [AppCard types](#appcard-types)
+- [Component API](#component-api)
+  - [ID](#id)
+  - [ClassName](#classname)
+  - [Heading](#heading)
+  - [Information](#information)
+  - [Rating value](#rating-value)
+- [App icons](#app-icons)
+  - [Without app icon](#without-app-icon)
+  - [With app icon](#with-app-icon)
+- [Feedback?](#feedback)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Overview
+
+An app card is used to feature specific content, typically an app. They are typically used inside `Collection` components, in which they are grouped together with related apps.
+
+### When to use this component
+
+Use app cards to feature content like apps and/or external tools. Typically, this is done in an overview of featured apps (e.g. under "Newest apps" or "App search results").
+
+### When to not use this component
+
+Only use app cards to feature content like apps, external tools etc. Do not use app cards for content like news or blog articles, products etc.
+
+## AppCard types
+
+<Canvas>
+    <Story name="All app cards">
+        <Collection variant="oneHalf">
+            <AppCard
+                heading="An app without icon"
+                information="Some app publisher"
+                ratingValue={3}
+            />
+            <AppCard
+                heading="An app with an icon"
+                information="Some app publisher"
+                iconImageUrl={exampleImageFile}
+                ratingValue={3}
+            />
+        </Collection>
+    </Story>
+</Canvas>
+
+## Component API
+
+<Props />
+
+### ID
+
+You can optionally set the app card's ID by providing the optional `id` prop.
+
+```jsx
+<AppCard
+    id="myAppCard"
+    heading="App card with custom ID"
+/>
+```
+
+### ClassName
+
+You can optionally set a custom (CSS) classname for the app card by providing the optional `className` prop.
+
+```jsx
+<AppCard
+    className="my-app-card"
+    heading="App card with custom classname"
+/>
+```
+
+### Heading
+
+You must set the featured app or external tool's heading by providing the `heading` prop accordingly.
+
+```jsx
+<AppCard
+    heading="Some educational app"
+/>
+```
+
+### Information
+
+You can optionally set the featured app or external tool's information (other than its title) by providing the `information` prop.
+
+```jsx
+<AppCard
+    heading="Some educational app"
+    information="Some educational app publisher"
+/>
+```
+
+### Rating value
+
+You can optionally set the featured app or external tool's rating value (typically coming from user reviews and/or ratings) by providing the `ratingValue` prop accordingly. If left `undefined`, no rating will be shown. A rating value of `0` will be treated as if rated as 0. The maximum rating value is `5`. Use whole numbers (0-5).
+
+```jsx
+<AppCard
+    heading="Some educational app"
+    ratingValue={3}
+/>
+```
+
+## App icons
+
+You can optionally set the featured app or external tool's icon image url by providing the `iconImageUrl` prop. Relative paths can be used as well as direct paths/urls.
+
+### Without app icon
+
+<Canvas>
+    <Story
+        name="Without icon"
+        args={{
+            heading: 'Some educational app',
+            information: 'Some educational app publisher',
+            ratingValue: 3,
+        }}
+    >
+        {(args) => (
+            <AppCard {...args} />
+        )}
+    </Story>
+</Canvas>
+
+### With app icon
+
+<Canvas>
+    <Story
+        name="With icon"
+        args={{
+            heading: 'Some educational app',
+            information: 'Some educational app publisher',
+            iconImageUrl: exampleImageFile,
+            ratingValue: 3,
+        }}
+    >
+        {(args) => (
+            <AppCard {...args} />
+        )}
+    </Story>
+</Canvas>
+
+## Feedback?
+
+Feel free to help us improve this component and/or its documentation by providing feedback, asking questions or updating the files involved through a pull request. [Learn more about contributing to our design system](?path=/docs/how-to-contribute--page).

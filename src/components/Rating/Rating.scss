@@ -1,0 +1,24 @@
+@import '../../scss/main.scss';
+
+$rating-star-color: $color-ui-100 !default;
+$rating-star-ticked-color: $color-tertiary !default;
+
+.rating {
+    display: flex;
+}
+
+.rating__star {
+    position: relative;
+    display: block;
+    margin-right: $spacing * 2;
+    color: $rating-star-color;
+
+    &::after {
+        position: absolute;
+        content: '\2605'; // Star icon
+    }
+}
+
+.rating__star--ticked {
+    color: $rating-star-ticked-color;
+}
