@@ -7,7 +7,6 @@ export const Button = ({
     id,
     className,
     type,
-    role,
     tabIndex,
     children,
     variant,
@@ -27,7 +26,6 @@ export const Button = ({
             'button--loading': isLoading && !isSkeleton,
         })}
         type={type}
-        role={role}
         tabIndex={tabIndex}
         disabled={isDisabled}
         onClick={(!isLoading && !isSkeleton) ? undefined : onClick}
@@ -53,10 +51,6 @@ Button.propTypes = {
         'reset',
         'submit'
     ]),
-    /**
-     * Optional prop to specify the role of the button
-     */
-    role: PropTypes.string,
     /**
      * Optional prop to specify the tabindex of the button
      */
