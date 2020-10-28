@@ -9,6 +9,7 @@ export const AppCard = ({
     className,
     heading,
     information,
+    url,
     ratingValue,
     iconImageUrl,
 }) => (
@@ -18,7 +19,7 @@ export const AppCard = ({
     >
         <a
             className="app-card__inner"
-            href="/"
+            href={url}
             title={heading}
         >
             <div className="app-card__description">
@@ -64,6 +65,10 @@ AppCard.propTypes = {
      */
     information: PropTypes.string,
     /**
+     * Specify a url for the app card to route to (e.g. the app information page or website)
+     */
+    url: PropTypes.string,
+    /**
      * Optionally specify the featured app's rating value (0...5)
      */
     ratingValue: PropTypes.oneOf([undefined, 0, 1, 2, 3, 4, 5]),
@@ -74,6 +79,7 @@ AppCard.propTypes = {
 };
 
 AppCard.defaultProps = {
+    url: '#',
     ratingValue: undefined,
     iconImageUrl: undefined,
 };

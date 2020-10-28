@@ -24,11 +24,11 @@ import exampleImageFile from '../../assets/app-example-01.png';
 - [Overview](#overview)
   - [When to use this component](#when-to-use-this-component)
   - [When to not use this component](#when-to-not-use-this-component)
-  - [Collection types](#collection-types)
 - [Component API](#component-api)
-  - [ID](#id)
-  - [ClassName](#classname)
-- [Collection types](#collection-types-1)
+  - [`id`](#id)
+  - [`className`](#classname)
+  - [`variant`](#variant)
+- [Collection variants](#collection-variants)
   - [One fourth](#one-fourth)
   - [One third](#one-third)
   - [One half](#one-half)
@@ -39,16 +39,6 @@ import exampleImageFile from '../../assets/app-example-01.png';
 ## Overview
 
 A collection is used to display a group of related items. Because all the items inside the collection will scale responsively in the exact same way, the user will understand that these items belong together.
-
-### When to use this component
-
-Use a collection if you want to display a group of related items (e.g. news or blog articles) that need to scale the same way (e.g. each item at one third the size of the entire collection).
-
-### When to not use this component
-
-Do not use a collection if you want to create a layout with related and/or unrelated items. Also, do not use collections for grid styling purposes for any type of (related/unrelated) content. You may use the `Layout` component for that. Layouts on the other hand can be used in conjunction with collections. See the corresponding documentation for that.
-
-### Collection types
 
 <Canvas>
     <Story name="All collections">
@@ -118,11 +108,19 @@ Do not use a collection if you want to create a layout with related and/or unrel
     </Story>
 </Canvas>
 
+### When to use this component
+
+Use a collection if you want to display a group of related items (e.g. news or blog articles) that need to scale the same way (e.g. each item at one third the size of the entire collection).
+
+### When to not use this component
+
+Do not use a collection if you want to create a layout with related and/or unrelated items. Also, do not use collections for grid styling purposes for any type of (related/unrelated) content. You may use the `Layout` component for that. Layouts on the other hand can be used in conjunction with collections. See the corresponding documentation for that.
+
 ## Component API
 
 <Props />
 
-### ID
+### `id`
 
 You can optionally set the collections's ID by providing the optional `id` prop.
 
@@ -132,7 +130,7 @@ You can optionally set the collections's ID by providing the optional `id` prop.
 </Collection>
 ```
 
-### ClassName
+### `className`
 
 You can optionally set a custom (CSS) classname for the collection by providing the optional `className` prop.
 
@@ -142,9 +140,24 @@ You can optionally set a custom (CSS) classname for the collection by providing 
 </Collection>
 ```
 
-## Collection types
+### `variant`
 
-You can set the collection type by providing its `variant` prop accordingly. The variants determine how many child items inside the collection will be displayed in a row when the screen viewport is at its widest. Please note that when the screen size changes, the collection will react responsively (e.g. with variant `oneHalf`, two items will be displayed in one row, but on smaller screens, each item will be on another row).
+You may set the collection variant by providing its `variant` prop. The variants determine how many child items inside the collection will be displayed in a row when the screen viewport is at its widest. Please note that when the screen size changes, the collection will react responsively (e.g. with variant `oneHalf`, two items will be displayed in one row, but on smaller screens, each item will be on another row).
+
+```jsx
+<Collection variant="oneFourth">
+    <div>1st child item</div>
+    <div>2nd child item</div>
+    <div>3rd child item</div>
+    <div>4th child item</div>
+    <div>5th child item</div> {/* New line */}
+    <div>6th child item</div>
+    <div>7th child item</div>
+    <div>8th child item</div>
+</Collection>
+```
+
+## Collection variants
 
 ### One fourth
 

@@ -24,16 +24,17 @@ import exampleImageFile from '../../assets/app-example-01.png';
 - [Overview](#overview)
   - [When to use this component](#when-to-use-this-component)
   - [When to not use this component](#when-to-not-use-this-component)
-- [AppCard types](#appcard-types)
 - [Component API](#component-api)
-  - [ID](#id)
-  - [ClassName](#classname)
-  - [Heading](#heading)
-  - [Information](#information)
-  - [Rating value](#rating-value)
+  - [`id`](#id)
+  - [`className`](#classname)
+  - [`heading`](#heading)
+  - [`information`](#information)
+  - [`url`](#url)
+  - [`ratingValue`](#ratingvalue)
 - [App icons](#app-icons)
   - [Without app icon](#without-app-icon)
   - [With app icon](#with-app-icon)
+- [Related components](#related-components)
 - [Feedback?](#feedback)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -42,18 +43,8 @@ import exampleImageFile from '../../assets/app-example-01.png';
 
 An app card is used to feature specific content, typically an app. They are typically used inside `Collection` components, in which they are grouped together with related apps.
 
-### When to use this component
-
-Use app cards to feature content like apps and/or external tools. Typically, this is done in an overview of featured apps (e.g. under "Newest apps" or "App search results").
-
-### When to not use this component
-
-Only use app cards to feature content like apps, external tools etc. Do not use app cards for content like news or blog articles, products etc.
-
-## AppCard types
-
 <Canvas>
-    <Story name="All app cards">
+    <Story name="All variants">
         <Collection variant="oneHalf">
             <AppCard
                 heading="An app without icon"
@@ -70,11 +61,19 @@ Only use app cards to feature content like apps, external tools etc. Do not use 
     </Story>
 </Canvas>
 
+### When to use this component
+
+Use app cards to feature content like apps and/or external tools. Typically, this is done in an overview of featured apps (e.g. under "Newest apps" or "App search results"). See the `PageSection` component for examples.
+
+### When to not use this component
+
+Only use app cards to feature content like apps, external tools etc. Do not use app cards for content like news or blog articles, products etc. Also see [Related components](#related-components).
+
 ## Component API
 
 <Props />
 
-### ID
+### `id`
 
 You can optionally set the app card's ID by providing the optional `id` prop.
 
@@ -85,7 +84,7 @@ You can optionally set the app card's ID by providing the optional `id` prop.
 />
 ```
 
-### ClassName
+### `className`
 
 You can optionally set a custom (CSS) classname for the app card by providing the optional `className` prop.
 
@@ -96,7 +95,7 @@ You can optionally set a custom (CSS) classname for the app card by providing th
 />
 ```
 
-### Heading
+### `heading`
 
 You must set the featured app or external tool's heading by providing the `heading` prop accordingly.
 
@@ -106,7 +105,7 @@ You must set the featured app or external tool's heading by providing the `headi
 />
 ```
 
-### Information
+### `information`
 
 You can optionally set the featured app or external tool's information (other than its title) by providing the `information` prop.
 
@@ -117,7 +116,18 @@ You can optionally set the featured app or external tool's information (other th
 />
 ```
 
-### Rating value
+### `url`
+
+You may set an url for the app card to point to when the user clicks or taps it.
+
+```jsx
+<AppCard
+    heading="Some educational app"
+    url="https://some.educational.app.com/"
+/>
+```
+
+### `ratingValue`
 
 You can optionally set the featured app or external tool's rating value (typically coming from user reviews and/or ratings) by providing the `ratingValue` prop accordingly. If left `undefined`, no rating will be shown. A rating value of `0` will be treated as if rated as 0. The maximum rating value is `5`. Use whole numbers (0-5).
 
@@ -171,6 +181,10 @@ You can optionally set the featured app or external tool's icon image url by pro
         )}
     </Story>
 </Canvas>
+
+## Related components
+
+- ArticleCard (for featured textual content)
 
 ## Feedback?
 

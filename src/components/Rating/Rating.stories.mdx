@@ -22,16 +22,14 @@ import { Rating } from './Rating';
 - [Overview](#overview)
   - [When to use this component](#when-to-use-this-component)
   - [When to not use this component](#when-to-not-use-this-component)
-- [Rating types](#rating-types)
 - [Component API](#component-api)
-  - [ID](#id)
-  - [ClassName](#classname)
+  - [`id`](#id)
+  - [`className`](#classname)
 - [Rating values](#rating-values)
   - [Score 0 out of 5](#score-0-out-of-5)
   - [Score 1 out of 5](#score-1-out-of-5)
   - [Score 2 out of 5](#score-2-out-of-5)
   - [Score 3 out of 5](#score-3-out-of-5)
-  - [Score 3 out of 5](#score-3-out-of-5-1)
   - [Score 4 out of 5](#score-4-out-of-5)
   - [Score 5 out of 5](#score-5-out-of-5)
 - [Feedback?](#feedback)
@@ -42,6 +40,19 @@ import { Rating } from './Rating';
 
 A rating is used to indicate a rating value (0-5) for a corresponding item (e.g. a product or service). It provides instant visual feedback by using stars. The more stars are coloured, the higher the rating's value. The scoring scale is *n* out of 5.
 
+<Canvas>
+    <Story name="All ratings">
+        <div style={{ padding: '16px', backgroundColor: '#ffffff' }}>
+            <Rating value={0} /><br />
+            <Rating value={1} /><br />
+            <Rating value={2} /><br />
+            <Rating value={3} /><br />
+            <Rating value={4} /><br />
+            <Rating value={5} /><br />
+        </div>
+    </Story>
+</Canvas>
+
 ### When to use this component
 
 Use ratings in conjunction with items or content that need it. Place them close to the item the rating is given for, so the user will understand its meaning.
@@ -50,24 +61,11 @@ Use ratings in conjunction with items or content that need it. Place them close 
 
 Do not use ratings in locations where there is no corresponding item (the rating is applied to). Only use ratings when there is an actual rating (0-5). For example, when an item has no ratings (or reviews) yet, do not use it. A rating value of `0` will show 5 empty stars, telling the user the corresponding item has a bad rating (0 out of 5).
 
-## Rating types
-
-<Canvas>
-    <Story name="All ratings">
-        <Rating value={0} /><br />
-        <Rating value={1} /><br />
-        <Rating value={2} /><br />
-        <Rating value={3} /><br />
-        <Rating value={4} /><br />
-        <Rating value={5} /><br />
-    </Story>
-</Canvas>
-
 ## Component API
 
 <Props />
 
-### ID
+### `id`
 
 You can optionally set the rating's ID by providing the optional `id` prop.
 
@@ -75,7 +73,7 @@ You can optionally set the rating's ID by providing the optional `id` prop.
 <Rating id="myRating" />
 ```
 
-### ClassName
+### `className`
 
 You can optionally set a custom (CSS) classname for the rating by providing the optional `className` prop.
 

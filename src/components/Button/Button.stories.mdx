@@ -22,12 +22,11 @@ import { Button } from './Button';
 - [Overview](#overview)
   - [When to use this component](#when-to-use-this-component)
   - [When not to use this component](#when-not-to-use-this-component)
-  - [Button types](#button-types)
 - [Component API](#component-api)
-  - [ID](#id)
-  - [ClassName](#classname)
-  - [Tabindex](#tabindex)
-  - [Type](#type)
+  - [`id`](#id)
+  - [`className`](#classname)
+  - [`tabIndex`](#tabindex)
+  - [`type`](#type)
 - [Button variants](#button-variants)
   - [Primary buttons](#primary-buttons)
   - [Secondary buttons](#secondary-buttons)
@@ -46,6 +45,20 @@ import { Button } from './Button';
 
 Buttons allow the user to take action or make a choice with a single click or tab. Button labels describe the action that will be executed when the user interacts with it.
 
+<Canvas>
+    <Story name="All buttons">
+        <div style={{ padding: '16px', backgroundColor: '#ffffff' }}>
+            <Button>Primary</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="tertiary">Tertiary</Button>
+            <Button isOutlined>Outlined</Button>
+            <Button isDisabled>Disabled</Button>
+            <Button isLoading>Loading</Button>
+            <Button isSkeleton>Skeleton</Button>
+        </div>
+    </Story>
+</Canvas>
+
 ### When to use this component
 
 Use the `Button` component to help the user carry out an action. In most cases, this action will take place on the same page or screen.
@@ -54,25 +67,11 @@ Use the `Button` component to help the user carry out an action. In most cases, 
 
 Do not use the `Button` component to help navigate the user to another page or screen. Use the `Link` component instead.
 
-### Button types
-
-<Canvas>
-    <Story name="All buttons">
-        <Button>Primary</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="tertiary">Tertiary</Button>
-        <Button isOutlined>Outlined</Button>
-        <Button isDisabled>Disabled</Button>
-        <Button isLoading>Loading</Button>
-        <Button isSkeleton>Skeleton</Button>
-    </Story>
-</Canvas>
-
 ## Component API
 
 <Props />
 
-### ID
+### `id`
 
 You can optionally set the button's ID by providing the optional `id` prop.
 
@@ -82,7 +81,7 @@ You can optionally set the button's ID by providing the optional `id` prop.
 </Button>
 ```
 
-### ClassName
+### `className`
 
 You can optionally set a custom (CSS) classname for the button by providing the optional `className` prop.
 
@@ -92,7 +91,7 @@ You can optionally set a custom (CSS) classname for the button by providing the 
 </Button>
 ```
 
-### Tabindex
+### `tabIndex`
 
 You can optionally set the button's tabindex by providing the optional `tabIndex` prop.
 
@@ -106,7 +105,7 @@ You can optionally set the button's tabindex by providing the optional `tabIndex
 </Button>
 ```
 
-### Type
+### `type`
 
 You can optionally set the button's type by providing the optional `type` prop.
 
