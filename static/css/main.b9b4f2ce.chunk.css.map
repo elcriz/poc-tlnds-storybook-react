@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.b9b4f2ce.chunk.css","sources":["webpack:///../../scss/utilities/animations.scss"],"sourcesContent":["@keyframes loadingBar {\n    0% {\n        transform: translateX(-100%);\n    }\n    100% {\n        transform: translateX(100%);\n    }\n}\n"],"mappings":";;;;;;;;;;;;AAAA;;AAAA;;AAAA;;AAAA;;AAAA;;AAAA;;","sourceRoot":""}
