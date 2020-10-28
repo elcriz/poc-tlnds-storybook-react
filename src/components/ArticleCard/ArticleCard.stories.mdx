@@ -1,0 +1,247 @@
+import {
+    Meta,
+    Story,
+    Props,
+    Canvas
+} from '@storybook/addon-docs/blocks';
+import { ArticleCard } from './ArticleCard';
+import { Collection } from '../Collection/Collection';
+import exampleImageFile from '../../assets/article-example-01.png';
+
+<Meta
+    title="Library/Components/ArticleCard"
+    component={ArticleCard}
+/>
+
+# ArticleCard
+
+## Table of contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- (@see https://github.com/thlorenz/doctoc) -->
+
+- [Overview](#overview)
+- [When to use this component](#when-to-use-this-component)
+- [When to not use this component](#when-to-not-use-this-component)
+- [Component API](#component-api)
+  - [`id`](#id)
+  - [`className`](#classname)
+  - [`heading`](#heading)
+  - [`description`](#description)
+  - [`url`](#url)
+  - [`imageUrl`](#imageurl)
+  - [`hasShortenedDescription`](#hasshorteneddescription)
+- [ArticleCard variants](#articlecard-variants)
+  - [Inverted](#inverted)
+  - [With border](#with-border)
+  - [With a stretched background](#with-a-stretched-background)
+- [Related components](#related-components)
+- [Feedback?](#feedback)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Overview
+
+An article card is used to feature specific textual content, typically an article (e.g. a blog article or news item). They are typically used inside `Collection` components, in which they are grouped together with other article cards within the same theme.
+
+<Canvas>
+    <Story name="All variants">
+        <Collection variant="oneFourth">
+            <ArticleCard
+                heading="Some featured item"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                imageUrl={exampleImageFile}
+            />
+            <div style={{ padding: '16px', backgroundColor: '#672483' }}>
+                <ArticleCard
+                    heading="Some inverted featured item"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    imageUrl={exampleImageFile}
+                    isInverted
+                />
+            </div>
+            <div style={{ padding: '16px', backgroundColor: '#ffffff' }}>
+                <ArticleCard
+                    heading="Some featured item with border"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    imageUrl={exampleImageFile}
+                    hasBorder
+                />
+            </div>
+            <ArticleCard
+                heading="Some stretch background featured item"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                imageUrl={exampleImageFile}
+                isInverted
+                hasStretchBackground
+            />
+        </Collection>
+    </Story>
+</Canvas>
+
+## When to use this component
+
+Use article cards to feature textual content like blog articles or news items. Typically, this is done in an overview (e.g. under "Latest news" or "New in assignments"). See the `PageSection` component for examples.
+
+## When to not use this component
+
+Only use article cards to feature textual content like blog posts or news articles. Do not use article cards for content like featured apps or external tools etc. Also see [Related components](#related-components).
+
+## Component API
+
+<Props />
+
+### `id`
+
+You can optionally set the article card's ID by providing the optional `id` prop.
+
+```jsx
+<ArticleCard
+    id="myArticleCard"
+    heading="Article card with custom ID"
+/>
+```
+
+### `className`
+
+You can optionally set a custom (CSS) classname for the article card by providing the optional `className` prop.
+
+```jsx
+<ArticleCard
+    className="my-article-card"
+    heading="Article card with custom ID"
+/>
+```
+
+### `heading`
+
+You must set the featured item's heading by providing the `heading` prop accordingly.
+
+```jsx
+<ArticleCard
+    heading="Some featured item"
+/>
+```
+
+### `description`
+
+You can optionally set the featured item's (shorthand) description by providing the `decription` prop. Typically, this is a (shorthand) summary of the featured item's body text.
+
+```jsx
+<ArticleCard
+    heading="Some featured item"
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+/>
+```
+
+### `url`
+
+You may set an url for the article card to point to when the user clicks or taps it.
+
+```jsx
+<ArticleCard
+    heading="Some featured item"
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    url="https://some.featured.article.com/"
+/>
+```
+
+### `imageUrl`
+
+You may set an url for an image. If the prop `hasStretchBackground` is provided as `true`, the image will be used as a background image for the entire article card.
+
+```jsx
+<ArticleCard
+    heading="Some featured item"
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    imageUrl="https://some.featured.article.com/example-image.jpg"
+/>
+```
+
+### `hasShortenedDescription`
+
+You can optionally (force) truncate the description (see `description` prop documentation above). This way, you don't have to worry about long description texts not fitting inside the article card's layout. As this is done by CSS, accessibility isn't an issue because screen readers will still be able to see (and read aloud) the entire text.
+
+```jsx
+<ArticleCard
+    heading="Some featured item"
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque suscipit pellentesque erat feugiat ultricies. Fusce eget leo quis eros bibendum placerat quis sit amet sem."
+    hasShortenedDescription
+/>
+```
+
+## ArticleCard variants
+
+### Inverted
+
+You may use inverted article cards when they are rendered over a dark(er) background for improved readability.
+
+<Canvas>
+    <Story
+        name="Inverted"
+        args={{
+            heading: 'Some inverted featured item',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            imageUrl: exampleImageFile,
+            isInverted: true,
+        }}
+    >
+        {(args) => (
+            <div style={{ padding: '16px', backgroundColor: '#672483' }}>
+                <ArticleCard {...args} />
+            </div>
+        )}
+    </Story>
+</Canvas>
+
+### With border
+
+You may use article cards with a border for improved readability on light(er) backgrounds, or when you want them to stand out.
+
+<Canvas>
+    <Story
+        name="With border"
+        args={{
+            heading: 'Some featured item with border',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            imageUrl: exampleImageFile,
+            hasBorder: true,
+        }}
+    >
+        {(args) => (
+            <ArticleCard {...args} />
+        )}
+    </Story>
+</Canvas>
+
+### With a stretched background
+
+You may use article cards with a stretch background when you want them to stand out. The provied image (provided by its url by setting the `imageUrl` prop accordingly) will be rendered as the entire article card's background, rather than a separate image within the card.
+
+**Please note:** it is recommended to set the `isInverted` prop to `true` when using a stretched background for improved readability.
+
+<Canvas>
+    <Story
+        name="Stretched background"
+        args={{
+            heading: 'Some featured item with stretched background',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            imageUrl: exampleImageFile,
+            hasStretchBackground: true,
+            isInverted: true,
+        }}
+    >
+        {(args) => (
+            <ArticleCard {...args} />
+        )}
+    </Story>
+</Canvas>
+
+## Related components
+
+- AppCard (for featured content like apps or external tools)
+
+## Feedback?
+
+Feel free to help us improve this component and/or its documentation by providing feedback, asking questions or updating the files involved through a pull request. [Learn more about contributing to our design system](?path=/docs/how-to-contribute--page).
