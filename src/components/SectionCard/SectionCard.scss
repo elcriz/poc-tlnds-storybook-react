@@ -1,0 +1,53 @@
+@import '../../scss/main.scss';
+
+$section-card-inner-background-color: $color-ui-light !default;
+$section-card-description-color: $color-text-grey !default;
+$section-card-heading-font-size: $font-size-90 !default;
+$section-card-description-font-size: $font-size-80 !default;
+$section-card-image-width: $spacing * 7 !default;
+
+.section-card__inner {
+    display: flex;
+    align-items: center;
+    padding: $spacing * 2 $spacing;
+    background-color: $section-card-inner-background-color;
+    border-radius: $border-radius-80;
+
+    &:hover,
+    &:focus {
+        box-shadow: $box-shadow-100;
+    }
+}
+
+.section-card__content {
+    order: 2;
+}
+
+.section-card__heading {
+    position: relative;
+    display: inline;
+    padding-right: $spacing * 2;
+    font-size: $section-card-heading-font-size;
+
+    &::after {
+        position: absolute;
+        right: 0;
+        top: $spacing / 4;
+        content: '>';
+        font-weight: $font-weight-100;
+    }
+}
+
+.section-card__description {
+    margin-top: $spacing / 2;
+    color: $section-card-description-color;
+    font-size: $section-card-description-font-size;
+    text-decoration: none;
+}
+
+.section-card__image {
+    order: 1;
+    display: block;
+    width: $section-card-image-width;
+    margin-right: $spacing * 2;
+}

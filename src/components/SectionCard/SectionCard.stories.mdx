@@ -1,0 +1,177 @@
+import {
+    Meta,
+    Story,
+    Props,
+    Canvas
+} from '@storybook/addon-docs/blocks';
+import { SectionCard } from './SectionCard';
+import { Collection } from '../Collection/Collection';
+import exampleImageFile from '../../assets/section-example-01.png';
+
+<Meta
+    title="Library/Components/SectionCard"
+    component={SectionCard}
+/>
+
+# SectionCard
+
+## Table of contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- (@see https://github.com/thlorenz/doctoc) -->
+
+- [Overview](#overview)
+  - [When to use this component](#when-to-use-this-component)
+  - [When to not use this component](#when-to-not-use-this-component)
+- [Component API](#component-api)
+  - [`id`](#id)
+  - [`className`](#classname)
+  - [`heading`](#heading)
+  - [`description`](#description)
+  - [`url`](#url)
+  - [`imageUrl`](#imageurl)
+- [SectionCard variants](#sectioncard-variants)
+  - [Without image](#without-image)
+  - [With image](#with-image)
+- [Feedback?](#feedback)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Overview
+
+A section card is used to feature sections of the service or product website or app. They are typically used inside `Collection` components, in which they are grouped together with other section cards.
+
+<Canvas>
+    <Story name="All section cards">
+        <Collection variant="oneHalf">
+            <SectionCard
+                heading="Some featured section"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            />
+            <SectionCard
+                heading="Some featured section with image"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                imageUrl={exampleImageFile}
+            />
+        </Collection>
+    </Story>
+</Canvas>
+
+### When to use this component
+
+Use section cards to feature sections of the website or app you are working on (e.g. "Apps", "Tools" or "News" etc.), or external (related) service websies or apps (e.g. "Catalogue", "LML" or "PSO" etc.).
+
+### When to not use this component
+
+Only use section cards for what they were designed for: featuring sections of your website or app, or related external service websites or apps.
+
+## Component API
+
+<Props />
+
+### `id`
+
+You can optionally set the section card's ID by providing the optional `id` prop.
+
+```jsx
+<SectionCard
+    id="mySectionCard"
+    heading="Section card with custom ID"
+/>
+```
+
+### `className`
+
+You can optionally set a custom (CSS) classname for the section card by providing the optional `className` prop.
+
+```jsx
+<SectionCard
+    className="my-section-card"
+    heading="Section card with custom ID"
+/>
+```
+
+### `heading`
+
+You must set the featured section's heading by providing the `heading` prop accordingly.
+
+```jsx
+<SectionCard
+    heading="Some featured section"
+/>
+```
+
+### `description`
+
+You can optionally set the featured section's (shorthand) description by providing the `decription` prop.
+
+```jsx
+<SectionCard
+    heading="Some featured section"
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+/>
+```
+
+### `url`
+
+You may set an url for the section card to point to when the user clicks or taps it.
+
+```jsx
+<SectionCard
+    heading="Some featured ection"
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    url="https://some.featured.section.com/"
+/>
+```
+
+### `imageUrl`
+
+You may set an url for an image.
+
+```jsx
+<SectionCard
+    heading="Some featured section"
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    imageUrl="https://some.featured.article.com/example-imape.jpg"
+/>
+```
+
+## SectionCard variants
+
+### Without image
+
+<Canvas>
+    <Story
+        name="Without image"
+        args={{
+            heading: 'Some featured section',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        }}
+    >
+        {(args) => (
+            <SectionCard {...args} />
+        )}
+    </Story>
+</Canvas>
+
+### With image
+
+<Canvas>
+    <Story
+        name="With image"
+        args={{
+            heading: 'Some featured section with image',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            imageUrl: exampleImageFile,
+        }}
+    >
+        {(args) => (
+            <SectionCard {...args} />
+        )}
+    </Story>
+</Canvas>
+
+## Feedback?
+
+Feel free to help us improve this component and/or its documentation by providing feedback, asking questions or updating the files involved through a pull request. [Learn more about contributing to our design system](?path=/docs/how-to-contribute--page).
