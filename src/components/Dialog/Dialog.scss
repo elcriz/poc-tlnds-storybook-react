@@ -1,0 +1,61 @@
+@import '../../scss/main.scss';
+
+$dialog-icon-size: $spacing * 2.5 !default;
+
+$dialog-info-color: $color-info-100 !default;
+$dialog-info-background-color: $color-info-200 !default;
+
+$dialog-success-color: $color-success-90 !default;
+$dialog-success-background-color: $color-success-200 !default;
+
+$dialog-warning-color: $color-warning-90 !default;
+$dialog-warning-background-color: $color-warning-200 !default;
+
+$dialog-error-color: $color-error-100 !default;
+$dialog-error-background-color: $color-error-180 !default;
+
+.dialog {
+    display: flex;
+    padding: $spacing;
+    color: $dialog-info-color;
+    background-color: $dialog-info-background-color;
+    border-radius: $border-radius-80;
+}
+
+.dialog--success {
+    color: $dialog-success-color;
+    background-color: $dialog-success-background-color;
+}
+
+.dialog--warning {
+    color: $dialog-warning-color;
+    background-color: $dialog-warning-background-color;
+}
+
+.dialog--error {
+    color: $dialog-error-color;
+    background-color: $dialog-error-background-color;
+}
+
+.dialog__icon {
+    width: $dialog-icon-size;
+    height: $dialog-icon-size;
+    margin: $spacing;
+    fill: $dialog-info-color;
+
+    .dialog--success & {
+        fill: $dialog-success-color;
+    }
+
+    .dialog--warning & {
+        fill: $dialog-warning-color;
+    }
+
+    .dialog--error & {
+        fill: $dialog-error-color;
+    }
+}
+
+.dialog__main {
+    padding: $spacing;
+}

@@ -1,0 +1,174 @@
+import {
+    Meta,
+    Story,
+    Props,
+    Canvas
+} from '@storybook/addon-docs/blocks';
+import { Dialog } from './Dialog';
+
+<Meta
+    title="Library/Components/Dialog"
+    component={Dialog}
+/>
+
+# Dialog
+
+## Table of Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- (@see https://github.com/thlorenz/doctoc) -->
+
+- [Overview](#overview)
+  - [When to use this component](#when-to-use-this-component)
+- [Component API](#component-api)
+  - [`id`](#id)
+  - [`className`](#classname)
+  - [`hasIcon`](#hasicon)
+- [Dialog variants](#dialog-variants)
+  - [Success dialogs](#success-dialogs)
+  - [Warning dialogs](#warning-dialogs)
+  - [Error dialogs](#error-dialogs)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Overview
+
+A dialog is used to convey (extra) information to the user. It is up to the user to decide what to do with that information. Dialogs typically contain no triggerable actions.
+
+<Canvas>
+    <Story name="All variants">
+        <div style={{ padding: '8px 0' }}>
+            <Dialog>
+                This is a standard dialog. It can be used to convey simple information to users, such as: 'Welcome to your dashboard'
+            </Dialog>
+        </div>
+        <div style={{ padding: '8px 0' }}>
+            <Dialog
+                hasIcon
+            >
+                This is a standard dialog with an inline svg icon. It can be used to convey simple information to users, such as: 'Did you know..'.
+            </Dialog>
+        </div>
+        <div style={{ padding: '8px 0' }}>
+            <Dialog
+                variant="success"
+                hasIcon
+            >
+                This is a 'success' dialog with an inline svg icon. It can be used to display a positive message, such as: 'Your order is confirmed'.
+            </Dialog>
+        </div>
+        <div style={{ padding: '8px 0' }}>
+            <Dialog
+                variant="warning"
+                hasIcon
+            >
+                This is a 'warning' dialog with an inline svg icon. It can be used to display a warning message, such as: 'This order is not yet confirmed'.
+            </Dialog>
+        </div>
+        <div style={{ padding: '8px 0' }}>
+            <Dialog
+                variant="error"
+                hasIcon
+            >
+                This is an 'error' dialog with an inline svg icon. It can be used to display an error message, such as: 'Your order could not be processed'.
+            </Dialog>
+        </div>
+    </Story>
+</Canvas>
+
+### When to use this component
+
+Use dialogs to convey information that requires special attention like success, warning or error messages. Typically, it is then up to the user what to do with that information.
+
+## Component API
+
+<Props />
+
+### `id`
+
+You can optionally set the dialog's ID by providing the optional `id` prop.
+
+```jsx
+<Dialog id="myDialog">
+    Dialog with custom ID
+</Dialog>
+```
+
+### `className`
+
+You can optionally set a custom (CSS) classname for the dialog by providing the optional `className` prop.
+
+```jsx
+<Dialog className="my-dialog">
+    Dialog with custom classname
+</Dialog>
+```
+
+### `hasIcon`
+
+Provide the `hasIcon` prop as  `true` to render an icon, matching the dialog's variant.
+
+```jsx
+<Dialog hasIcon>
+    Dialog with an SVG icon
+</Dialog>
+```
+
+## Dialog variants
+
+Dialogs come in various flavours, depending on which type of information (and the urgency behind that information) you want to convey to the user.
+
+### Success dialogs
+
+<Canvas>
+    <Story
+        name="Success"
+        args={{
+            variant: 'success',
+            hasIcon: true
+        }}
+    >
+    {(args) => (
+        <Dialog {...args}>
+            This is a 'success' dialog with an inline svg icon. It can be used to display a positive message, such as: 'Your order is confirmed'.
+        </Dialog>
+    )}
+    </Story>
+</Canvas>
+
+### Warning dialogs
+
+<Canvas>
+    <Story
+        name="Warning"
+        args={{
+            variant: 'warning',
+            hasIcon: true
+        }}
+    >
+    {(args) => (
+        <Dialog {...args}>
+            This is a 'warning' dialog with an inline svg icon. It can be used to display a warning message, such as: 'This order is not yet confirmed'.
+        </Dialog>
+    )}
+    </Story>
+</Canvas>
+
+### Error dialogs
+
+<Canvas>
+    <Story
+        name="Error"
+        args={{
+            variant: 'error',
+            hasIcon: true
+        }}
+    >
+    {(args) => (
+        <Dialog {...args}>
+            This is an 'error' dialog with an inline svg icon. It can be used to display an error message, such as: 'Your order could not be processed'.
+        </Dialog>
+    )}
+    </Story>
+</Canvas>
