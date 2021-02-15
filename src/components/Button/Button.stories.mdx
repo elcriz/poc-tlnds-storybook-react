@@ -27,10 +27,12 @@ import { Button } from './Button';
   - [`className`](#classname)
   - [`tabIndex`](#tabindex)
   - [`type`](#type)
+  - [`title`](#title)
 - [Button variants](#button-variants)
   - [Primary buttons](#primary-buttons)
   - [Secondary buttons](#secondary-buttons)
   - [Tertiary buttons](#tertiary-buttons)
+  - [Error confirmation buttons](#error-confirmation-buttons)
   - [Outlined buttons](#outlined-buttons)
   - [Disabled buttons](#disabled-buttons)
   - [Loading buttons](#loading-buttons)
@@ -51,6 +53,7 @@ Buttons allow the user to take action or make a choice with a single click or ta
             <Button>Primary</Button>
             <Button variant="secondary">Secondary</Button>
             <Button variant="tertiary">Tertiary</Button>
+            <Button variant="error-confirmation">Error confirmation</Button>
             <Button isOutlined>Outlined</Button>
             <Button isDisabled>Disabled</Button>
             <Button isLoading>Loading</Button>
@@ -115,6 +118,16 @@ You can optionally set the button's type by providing the optional `type` prop.
 </Button>
 ```
 
+### `title`
+
+You can optionally set the button's title by providing the optional `title` prop.
+
+```jsx
+<Button title="A title for this button">
+    Button with custom title
+</Button>
+```
+
 ## Button variants
 
 Buttons come in various flavours, depending on which action inside which context they represent.
@@ -166,6 +179,23 @@ Tertiary buttons are meant for less prominent actions. They can be used in isola
     >
         {(args) => (
             <Button {...args}>Tertiary</Button>
+        )}
+    </Story>
+</Canvas>
+
+### Error confirmation buttons
+
+Error confirmation buttons are meant for when the user needs to confirm an error (e.g. to initiate a retry action).
+
+<Canvas>
+    <Story
+        name="Error confirmation"
+        args={{
+            variant: 'error-confirmation',
+        }}
+    >
+        {(args) => (
+            <Button {...args}>Error confirmation</Button>
         )}
     </Story>
 </Canvas>

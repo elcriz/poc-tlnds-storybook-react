@@ -14,6 +14,18 @@ $button-tertiary-color: $color-text-light !default;
 $button-loading-indicator-background-color: $color-ui-200 !default;
 $button-skeleton-background-color: $color-ui-90 !default;
 $button-skeleton-content-color: darken($button-skeleton-background-color, 10%) !default;
+$button-error-confirmation-background-color: $color-error-100 !default;
+$button-error-confirmation-color: $color-text-light !default;
+$button-loading-indicator-background-color: $color-ui-200 !default;
+
+@keyframes loadingBar {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
 
 .button {
     position: relative;
@@ -46,6 +58,30 @@ $button-skeleton-content-color: darken($button-skeleton-background-color, 10%) !
 .button--tertiary {
     background-color: $button-tertiary-background-color;
     color: $button-tertiary-color;
+}
+
+.button--error-confirmation {
+    background-color: $button-error-confirmation-background-color;
+    color: $button-error-confirmation-color;
+}
+
+.button--loading {
+    opacity: .5;
+    cursor: wait;
+
+    &::before {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: $button-loading-indicator-background-color;
+        animation-name: loadingBar;
+        animation-duration: 2.40868s;
+        animation-iteration-count: infinite;
+        will-change: transform;
+        content: '';
+    }
 }
 
 .button--loading {
@@ -100,5 +136,10 @@ $button-skeleton-content-color: darken($button-skeleton-background-color, 10%) !
     &.button--tertiary {
         color: $button-tertiary-background-color;
         border-color: $button-tertiary-background-color;
+    }
+
+    &.tlnds-button--error-confirmation {
+        color: $button-error-confirmation-background-color;
+        border-color: $button-error-confirmation-background-color;
     }
 }

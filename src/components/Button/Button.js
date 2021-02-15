@@ -7,6 +7,7 @@ export const Button = ({
     id,
     className,
     type,
+    title,
     tabIndex,
     children,
     variant,
@@ -21,10 +22,12 @@ export const Button = ({
         className={classnames(className, 'button', {
             'button--secondary': variant === 'secondary',
             'button--tertiary': variant === 'tertiary',
+            'button--error-confirmation': variant === 'error-confirmation',
             'button--outlined': isOutlined,
             'button--skeleton': isSkeleton,
             'button--loading': isLoading && !isSkeleton,
         })}
+        title={title}
         type={type}
         tabIndex={tabIndex}
         disabled={isDisabled}
@@ -52,6 +55,10 @@ Button.propTypes = {
         'submit'
     ]),
     /**
+     * Optional prop to specify a title for the button
+     */
+    title: PropTypes.string,
+    /**
      * Optional prop to specify the tabindex of the button
      */
     tabIndex: PropTypes.number,
@@ -65,6 +72,7 @@ Button.propTypes = {
     variant: PropTypes.oneOf([
         'secondary',
         'tertiary',
+        'error-confirmation'
     ]),
     /**
      * Specify if the button is currently disabled
