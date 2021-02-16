@@ -1,17 +1,17 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1be22efa4f92ee7c13563bcb8880fc52",
+    "revision": "b81a0b0213ebe8cca44c610646ff5668",
     "url": "iframe.html"
   },
   {
-    "url": "main.5d6f1d2111cad15a3d4e.bundle.js"
+    "url": "main.6bf44b7b1a293d2afa96.bundle.js"
   },
   {
-    "url": "runtime~main.5d6f1d2111cad15a3d4e.bundle.js"
+    "url": "runtime~main.6bf44b7b1a293d2afa96.bundle.js"
   },
   {
-    "revision": "a0d1a5baa9d2ff7ecc43",
-    "url": "static/css/main.96dc4647.chunk.css"
+    "revision": "b13c729891f5176fb074",
+    "url": "static/css/main.3853d4e2.chunk.css"
   },
   {
     "revision": "d00a968e744d3b8f01b83f5eba468803",
@@ -22,9 +22,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "static/media/article-example-01.773203f8.png"
   },
   {
-    "url": "vendors~main.5d6f1d2111cad15a3d4e.bundle.js"
+    "url": "vendors~main.6bf44b7b1a293d2afa96.bundle.js"
   },
   {
-    "url": "vendors~main.5d6f1d2111cad15a3d4e.bundle.js.LICENSE.txt"
+    "url": "vendors~main.6bf44b7b1a293d2afa96.bundle.js.LICENSE.txt"
   }
 ]);
