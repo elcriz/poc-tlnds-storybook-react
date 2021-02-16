@@ -9,7 +9,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "predeploy": "yarn build-storybook",
+    "predeploy": "npm run build-storybook",
     "deploy": "gh-pages -d storybook-static"
   },
   "eslintConfig": {

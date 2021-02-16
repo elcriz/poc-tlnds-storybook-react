@@ -19,7 +19,11 @@ export const Dialog = ({
         })}
     >
         {hasIcon && (
-            <svg class="dialog__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <svg
+                className="dialog__icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32"
+            >
                 {variant === undefined && (
                     <path d="M16,32 C7.2,32 0,24.8 0,16 C0,7.2 7.2,0 16,0 C24.8,0 32,7.2 32,16 C32,24.8 24.8,32 16,32 Z M16,11 C17.1,11 18,10.1 18,9 C18,7.9 17.1,7 16,7 C14.9,7 14,7.9 14,9 C14,10.1 14.9,11 16,11 Z M16,13 C14.9,13 14,13.9 14,15 L14,23 C14,24.1 14.9,25 16,25 C17.1,25 18,24.1 18,23 L18,15 C18,13.9 17.1,13 16,13 Z"/>
                 )}
