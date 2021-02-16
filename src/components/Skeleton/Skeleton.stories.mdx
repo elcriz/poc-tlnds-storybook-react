@@ -1,0 +1,126 @@
+import {
+    Meta,
+    Story,
+    Props,
+    Canvas
+} from '@storybook/addon-docs/blocks';
+import { Skeleton } from './Skeleton';
+
+<Meta
+    title="Library/Components/Skeleton"
+    component={Skeleton}
+/>
+
+# Skeleton
+
+## Table of Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- (@see https://github.com/thlorenz/doctoc) -->
+
+- [Overview](#overview)
+  - [When to use this component](#when-to-use-this-component)
+  - [When to not use this component](#when-to-not-use-this-component)
+- [Component API](#component-api)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Overview
+
+A skeleton is used as a placeholder for content that is yet to be retrieved/loaded/rendered. It helps the user to see what's coming, but isn't there yet. A skeleton impersonates the content that will be there soon, and lets the user know what is happening.
+
+<Canvas>
+    <Story name="All variants">
+        <div style={{ margin: '8px 0' }}>
+            <Skeleton />
+        </div>
+        <div style={{ margin: '8px 0' }}>
+            <Skeleton
+                isFullWidth
+            />
+        </div>
+        <div style={{ margin: '8px 0', width: '150px', height: '150px' }}>
+            <Skeleton
+                variant="figure"
+            />
+        </div>
+    </Story>
+</Canvas>
+
+### When to use this component
+
+Use skeletons as placeholders for content that is loading, and of which the user can expect that it is coming soon. If the content takes more time than, say, 4 seconds, provide the user with extra information of what is happening and why it is taking so long.
+
+### When to not use this component
+
+Do not use skeletons for content that takes a long time to load (e.g. more than 4 seconds). This might lead to the user thinking something is broken.
+
+## Component API
+
+<Props />
+
+### `id`
+
+You can optionally set the skeleton's ID by providing the optional `id` prop.
+
+```jsx
+<Skeleton id="myDialog" />
+```
+
+### `className`
+
+You can optionally set a custom (CSS) classname for the skeleton by providing the optional `className` prop.
+
+```jsx
+<Skeleton className="my-dialog" />
+```
+
+### `isFullWidth`
+
+Provide the `isFullWidth` prop as `true` in order to let the skeleton occupy all the available horizontal space.
+
+<Skeleton isFullWidth />
+
+```jsx
+<Skeleton isFullWidth />
+```
+
+### `isFullHeight`
+
+Provide the `isfullHeight` prop as `true` in order to let the skeleton occupy all the available vertical space. In the example below, the skeleton is rendered within a `<div />` container element that is 50 pixels high.
+
+<div style={{  height: '50px' }}>
+    <Skeleton isFullHeight />
+</div>
+
+```jsx
+<Skeleton isFullHeight />
+```
+
+## Skeleton variants
+
+Skeletons are rendered in their 'text' variant by default, so you can use them as a placeholder for loading text based content.
+
+### Figure skeletons
+
+Use figure skeletons as placeholders for loading figure elements, such as images.
+
+<Canvas>
+    <Story
+        name="Figure"
+        args={{
+            variant: 'figure'
+        }}
+    >
+        {(args) => (
+            <div style={{ margin: '8px 0', width: '150px', height: '150px' }}>
+                <Skeleton {...args} />
+            </div>
+        )}
+    </Story>
+</Canvas>
+
+## Feedback?
+
+Feel free to help us improve this component and/or its documentation by providing feedback, asking questions or updating the files involved through a pull request. [Learn more about contributing to our design system](?path=/docs/how-to-contribute--page).
